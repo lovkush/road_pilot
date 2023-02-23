@@ -19,3 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('register', [UserAuthController::class, 'register']);
+Route::get('getUser/{firebase_id}', [UserAuthController::class, 'getUser']);

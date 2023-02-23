@@ -74,4 +74,13 @@ class UserAuthController extends Controller
        
     }
 
+    public function getUser(String $firebaseId){
+        $user = User::where('firebase_id', $firebaseId)->first();
+        if($user==null){
+            return response()->json(['message' => 'User doesnot Exist', 'status' => false], 403);
+        }else{
+            return response()->json(['user' => $user, 'status' => true], 200);
+        }
+    }
+
 }
