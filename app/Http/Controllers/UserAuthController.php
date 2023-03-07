@@ -115,9 +115,9 @@ class UserAuthController extends Controller
 
     }
 
-    public function getUser(string $firebaseId)
+    public function getUser()
     {
-        $user = User::where('firebase_id', $firebaseId)->first();
+        $user =  Auth::guard('sanctum')->user();
         if ($user == null) {
             return response()->json(['message' => 'User doesnot Exist', 'status' => false], 403);
         } else {

@@ -40,6 +40,12 @@ class User extends Authenticatable
         'remember_token'
         ];
 
+        public static $admin =0;
+        public static $driver =1;
+        public static $fleetOwner =2;
+        public static $dhabaOwner =3;
+        public static $mechanic =4;
+
     /**
      * The attributes that should be hidden for serialization.
      *
