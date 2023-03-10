@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FleetOwnerController;
 use App\Http\Controllers\DriverController;
+use App\Http\Controllers\JobController;
 use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -32,4 +33,7 @@ Route::get('/fleetOwner/getAllImages',[FleetOwnerController::class,'getFleetOwne
 Route::post('/driver/addImage',[DriverController::class,'addImage'])->middleware('auth:sanctum');
 Route::get('/driver/getAllImages',[DriverController::class,'getDriverImages'])->middleware('auth:sanctum');
 Route::post('/getAllDriver',[DriverController::class,'getAllDriver'])->middleware('auth:sanctum');
+
+
+Route::post('/createJob',[JobController::class,'createJob'])->middleware('auth:sanctum');
  
